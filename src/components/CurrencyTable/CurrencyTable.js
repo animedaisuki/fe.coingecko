@@ -37,7 +37,10 @@ export default function CurrencyTable() {
           <TableHead>
             <TableRow>
               {headingProperties.map((headingProperty) => (
-                <TableCell align={headingProperty.align}>
+                <TableCell
+                  key={headingProperty.name}
+                  align={headingProperty.align}
+                >
                   <button
                     disabled={disabled}
                     className={styles.headingButton}

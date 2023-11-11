@@ -47,13 +47,13 @@ export default function CurrencyTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {crypto.currenciesStats.map((currencyStats) => (
+            {crypto.currenciesStats.map((currencyStats, index) => (
               <TableRow
                 key={currencyStats.symbol}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  1
+                  {index + 1}
                 </TableCell>
                 <TableCell align="center" className={styles.tableCell}>
                   <img
@@ -66,13 +66,37 @@ export default function CurrencyTable() {
                 <TableCell align="center">
                   {currencyStats.currentPrice}
                 </TableCell>
-                <TableCell align="center">
+                <TableCell
+                  align="center"
+                  style={{
+                    color:
+                      currencyStats.price24hChangePercentage <= 0
+                        ? "red"
+                        : "green",
+                  }}
+                >
                   {currencyStats.price24hChangePercentage}%
                 </TableCell>
-                <TableCell align="center">
+                <TableCell
+                  align="center"
+                  style={{
+                    color:
+                      currencyStats.price7dChangePercentage <= 0
+                        ? "red"
+                        : "green",
+                  }}
+                >
                   {currencyStats.price7dChangePercentage}%
                 </TableCell>
-                <TableCell align="center">
+                <TableCell
+                  align="center"
+                  style={{
+                    color:
+                      currencyStats.price1mthChangePercentage <= 0
+                        ? "red"
+                        : "green",
+                  }}
+                >
                   {currencyStats.price1mthChangePercentage}%
                 </TableCell>
                 <TableCell align="center">{currencyStats.volume}</TableCell>

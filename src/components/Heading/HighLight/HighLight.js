@@ -16,6 +16,8 @@ export default function HighLight() {
         </div>
         <div className={styles.cardContent}>
           {crypto.currenciesStats
+            .slice()
+            .sort((a, b) => a.rank - b.rank)
             .filter(
               (currencyStats) =>
                 currencyStats.rank >= 1 && currencyStats.rank <= 3

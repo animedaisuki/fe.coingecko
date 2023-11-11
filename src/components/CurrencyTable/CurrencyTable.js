@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./CurrencyTable.module.scss";
 import {
   Table,
@@ -9,10 +9,26 @@ import {
   TableRow,
 } from "@mui/material";
 import Paper from "@mui/material/Paper";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllCurrencyStats } from "../../api/crypto/crypto";
+import { cryptoActions } from "../../store/modules/cryptoSlice";
+import headingProperties from "../../utils/tableHeadings";
 
 export default function CurrencyTable() {
   const crypto = useSelector((state) => state.crypto);
+  const dispatch = useDispatch();
+
+  const [desc, setDesc] = useState(true);
+  const [disabled, setDisabled] = useState(false);
+
+  const handleSorting = async (sortBy) => {
+    setDisabled(true);
+    const order = desc ? "desc" : "aesc";
+    const result = await getAllCurrencyStats(sortBy, order);
+    dispatch(cryptoActions.setCryptoCurrenciesStats(result.data));
+    setDesc((prevState) => !prevState);
+    setDisabled(false);
+  };
 
   return (
     <div className={styles.tableOuterContainer}>
@@ -20,30 +36,19 @@ export default function CurrencyTable() {
         <Table size="small" aria-label="a dense table">
           <TableHead>
             <TableRow>
-              <TableCell>
-                <button className={styles.headingButton}>#</button>
-              </TableCell>
-              <TableCell align="left">
-                <button className={styles.headingButton}>Coin</button>
-              </TableCell>
-              <TableCell align="right">
-                <button className={styles.headingButton}>Price</button>
-              </TableCell>
-              <TableCell align="center">
-                <button className={styles.headingButton}>24h</button>
-              </TableCell>
-              <TableCell align="center">
-                <button className={styles.headingButton}>7d</button>
-              </TableCell>
-              <TableCell align="center">
-                <button className={styles.headingButton}>1mth</button>
-              </TableCell>
-              <TableCell align="right">
-                <button className={styles.headingButton}>24h Vol</button>
-              </TableCell>
-              <TableCell align="right">
-                <button className={styles.headingButton}>Mkt Cap</button>
-              </TableCell>
+              {headingProperties.map((headingProperty) => (
+                <TableCell align={headingProperty.align}>
+                  <button
+                    disabled={disabled}
+                    className={styles.headingButton}
+                    onClick={() => {
+                      handleSorting(headingProperty.query);
+                    }}
+                  >
+                    {headingProperty.name}
+                  </button>
+                </TableCell>
+              ))}
             </TableRow>
           </TableHead>
           <TableBody>

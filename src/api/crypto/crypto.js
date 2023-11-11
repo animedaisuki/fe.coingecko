@@ -15,9 +15,12 @@ export const getAllCurrencies = async () => {
   }
 };
 
-export const getAllCurrencyStats = async () => {
+export const getAllCurrencyStats = async (sortBy, order) => {
   try {
-    const path = `${config.apiAddress}/currencies/stats`;
+    let path = `${config.apiAddress}/currencies/stats`;
+    if (sortBy && order) {
+      path += `?sortBy=${sortBy}&order=${order}`;
+    }
     const result = await axios.get(path);
     return result;
   } catch (error) {

@@ -12,21 +12,11 @@ import Paper from "@mui/material/Paper";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCurrencyStats } from "../../api/crypto/crypto";
 import { cryptoActions } from "../../store/modules/cryptoSlice";
+import headingProperties from "../../utils/tableHeadings";
 
 export default function CurrencyTable() {
   const crypto = useSelector((state) => state.crypto);
   const dispatch = useDispatch();
-
-  const headingProperties = [
-    { name: "#", query: "rank", align: "left" },
-    { name: "Coin", query: "symbol", align: "left" },
-    { name: "Price", query: "currentPrice", align: "right" },
-    { name: "24h", query: "price24hChangePercentage", align: "center" },
-    { name: "7d", query: "price7dChangePercentage", align: "center" },
-    { name: "1mth", query: "price1mthChangePercentage", align: "center" },
-    { name: "24h Vol", query: "volume", align: "right" },
-    { name: "Mkt Cap", query: "marketCap", align: "right" },
-  ];
 
   const [desc, setDesc] = useState(true);
   const [disabled, setDisabled] = useState(false);

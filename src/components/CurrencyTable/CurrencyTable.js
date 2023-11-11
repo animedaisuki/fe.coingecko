@@ -26,7 +26,7 @@ export default function CurrencyTable() {
               <TableCell align="left">
                 <button className={styles.headingButton}>Coin</button>
               </TableCell>
-              <TableCell align="center">
+              <TableCell align="right">
                 <button className={styles.headingButton}>Price</button>
               </TableCell>
               <TableCell align="center">
@@ -38,10 +38,10 @@ export default function CurrencyTable() {
               <TableCell align="center">
                 <button className={styles.headingButton}>1mth</button>
               </TableCell>
-              <TableCell align="center">
+              <TableCell align="right">
                 <button className={styles.headingButton}>24h Vol</button>
               </TableCell>
-              <TableCell align="center">
+              <TableCell align="right">
                 <button className={styles.headingButton}>Mkt Cap</button>
               </TableCell>
             </TableRow>
@@ -63,8 +63,8 @@ export default function CurrencyTable() {
                   />
                   {currencyStats.symbol}
                 </TableCell>
-                <TableCell align="center">
-                  {currencyStats.currentPrice}
+                <TableCell align="right">
+                  ${currencyStats.currentPrice}
                 </TableCell>
                 <TableCell
                   align="center"
@@ -99,8 +99,8 @@ export default function CurrencyTable() {
                 >
                   {currencyStats.price1mthChangePercentage}%
                 </TableCell>
-                <TableCell align="center">{currencyStats.volume}</TableCell>
-                <TableCell align="center">{currencyStats.marketCap}</TableCell>
+                <TableCell align="right">${currencyStats.volume}</TableCell>
+                <TableCell align="right">${currencyStats.marketCap}</TableCell>
               </TableRow>
             ))}
           </TableBody>

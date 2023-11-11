@@ -7,24 +7,4 @@
       font-weight: bold;
     }
   }
-  .cardsContainer {
-    display: flex;
-    gap: 20px;
-    .card {
-      font-weight: bold;
-      padding: 10px;
-      margin-top: 20px;
-      box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
-      width: 50%;
-      height: 150px;
-      border-radius: 5px;
-      display: flex;
-      flex-direction: column;
-      .cardHeading {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
-    }
-  }
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Heading.module.scss";
 import { FormControlLabel, Switch } from "@mui/material";
-import WhatshotIcon from "@mui/icons-material/Whatshot";
+import HighLight from "./HighLight/HighLight";
 
 export default function Heading() {
   const [displayHighLight, setDisplayHighLight] = useState(true);
@@ -24,16 +24,7 @@ export default function Heading() {
           labelPlacement="start"
         />
       </div>
-      {displayHighLight && (
-        <div className={styles.cardsContainer}>
-          <div className={styles.card}>
-            <div className={styles.cardHeading}>
-              <WhatshotIcon />
-              <p>Trending</p>
-            </div>
-          </div>
-        </div>
-      )}
+      {displayHighLight && <HighLight />}
     </div>
   );
 }

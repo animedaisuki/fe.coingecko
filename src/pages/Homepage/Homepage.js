@@ -23,11 +23,6 @@ export default function Homepage() {
     fetchCurrencies();
   }, [dispatch]);
 
-  useEffect(() => {
-    console.log(crypto.currenciesStats);
-    console.log(crypto.currenciesStats.length);
-  }, [crypto.currenciesStats]);
-
   return (
     <>
       <Navbar />

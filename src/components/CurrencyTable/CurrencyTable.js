@@ -47,13 +47,13 @@ export default function CurrencyTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {crypto.currenciesStats.map((currencyStats, index) => (
+            {crypto.currenciesStats.map((currencyStats) => (
               <TableRow
                 key={currencyStats.symbol}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  {index + 1}
+                  {currencyStats.rank}
                 </TableCell>
                 <TableCell align="center" className={styles.tableCell}>
                   <img

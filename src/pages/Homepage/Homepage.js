@@ -1,9 +1,12 @@
 import React from "react";
+import Navbar from "../../components/Navbar/Navbar";
+import Heading from "../../components/Heading/Heading";
 
 export default function Homepage() {
   return (
     <>
-      <h1>123</h1>
+      <Navbar />
+      <Heading />
     </>
   );
 }

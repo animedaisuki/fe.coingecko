@@ -20,7 +20,7 @@ export default function Heading() {
               }}
             />
           }
-          label="Show High Light"
+          label="Highlights"
           labelPlacement="start"
         />
       </div>

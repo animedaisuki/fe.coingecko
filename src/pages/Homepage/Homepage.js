@@ -26,7 +26,7 @@ export default function Homepage() {
   return (
     <>
       <Navbar />
-      {crypto.currenciesStats.length > 0 ? (
+      {crypto?.currenciesStats?.length > 0 ? (
         <>
           <Heading />
           <CurrencyTable />

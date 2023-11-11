@@ -1,0 +1,18 @@
+.tableOuterContainer {
+  padding: 23px;
+  .headingButton {
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .tableCell {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 5px;
+    .cryptoImg {
+      height: 10px;
+    }
+  }
+}

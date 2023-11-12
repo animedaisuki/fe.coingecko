@@ -9,12 +9,6 @@ function App() {
     <Provider store={store}>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        {/*<Route path="/cryptocurrencies" element={<ChatPage />}>*/}
-        {/*  <Route*/}
-        {/*    path="/cryptocurrencies/:currencyName/"*/}
-        {/*    element={<CurrentDetails />}*/}
-        {/*  />*/}
-        {/*</Route>*/}
       </Routes>
     </Provider>
   );

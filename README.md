@@ -23,10 +23,10 @@
 - **Backend**: [be.coingecko](https://github.com/animedaisuki/be.coingecko) 
 
 ## 🚀 Features
-📈 Cryptocurrency Data
-Display cryptocurrency data.
-🔁 Data Sorting
-Sortable data columns for comparative analysis.
+### 📈 Cryptocurrency Data
+- Display cryptocurrency data.
+### 🔁 Data Sorting
+- Sortable data columns for comparative analysis.
 
 ## 💻 Technologies Used
 - React

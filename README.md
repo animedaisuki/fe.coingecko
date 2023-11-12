@@ -9,7 +9,7 @@
   </a>
 </p>
 <p align="center">
-    <h5 align="center">💹 Analyze and Track Cryptocurrency Data in Real-Time 💹</h5>
+    <h5 align="center">💹 Displaying and Sorting Cryptocurrency Data 💹</h5>
 </p>
 <!-- Badges go here: Build status, Test coverage, etc -->
 
@@ -36,5 +36,5 @@ Sortable data columns for comparative analysis.
 - Docker
 - AWS
 
-# 📜 License
+## 📜 License
 This project is released under the MIT License.
